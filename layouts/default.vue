@@ -1,7 +1,7 @@
 <template>
 <div class='app'>
   <b-navbar toggleable="lg" type="dark" variant="secondary" fixed="top">
-    <b-navbar-brand to="/"><img src="~/static/logo.png" width='35' height="35">Cherry</b-navbar-brand>
+    <b-navbar-brand to="/"><img src="~/static/logo.png" style='border-radius:50%;margin-right:5px;' width='35' height="35">Cherry</b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav v-if='user.name'>
@@ -11,7 +11,7 @@
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">
           <b-nav-item-dropdown v-if="user.name" right>
-            <template v-slot:button-content><b class='text-light'>User</b></template>
+            <template v-slot:button-content><b class='text-light'>{{user.status}}</b></template>
             <b-dropdown-item to="/profile">Profile</b-dropdown-item>
             <b-dropdown-item @click='logout'>Sign Out</b-dropdown-item>
           </b-nav-item-dropdown>
@@ -37,10 +37,17 @@ export default {
 </script>
 <style>
   .app{
-    padding: 70px 0 60px 0;
+    padding:70px 0 60px 0;
   }
   footer{
     height:50px;
+  }
+  nav ul.navbar-nav li.nav-item a.nav-link{
+    color: #fff;
+  }
+  nav ul.navbar-nav li.nav-item a.nuxt-link-active{
+    color:#aaa;
+    font-weight:500;
   }
   @media(max-width:576px){
     .app{

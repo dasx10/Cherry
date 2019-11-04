@@ -1,7 +1,7 @@
 <template>
   <div class='tab'>
-    <b-table striped hover :items="items" :fields="fields"></b-table>
-    <b-button variant="success" v-b-modal.addVal>Add valet</b-button>
+    <b-button variant="success" v-b-modal.addVal class='my-2'>Add new valet</b-button>
+    <b-table striped hover :items="items" :fields="fields" responsive ></b-table>
     <b-modal id="addVal" title="BootstrapVue" centered hide-footer>
       <b-form-group label="Email name:" label-for="val-name">
         <b-form-input id="val-name" v-model="form.name" type="text" required placeholder="Enter name"></b-form-input>
@@ -31,15 +31,19 @@
             key:'Valet_ID',
             sortable:true
           },{
+            key:'avatar',
+            sortable:false
+          },{
             key:'time',
             sortable:true
           }
         ],
         items:[
-          {Name:'Val',Email:'valet@cherry.com',Valet_ID:'15d6f99',time:'1/12/18'},
-          {Name:'Pirat',Email:'pirat@cherry.com',Valet_ID:'16g523',time:'6/13/18'},
-          {Name:'Pupkin',Email:'vasya@cherry.com',Valet_ID:'99v8vg',time:'4/12/18'},
-          {Name:'Dron',Email:'dron@cherry.com',Valet_ID:'116838',time:'31/2/19'},
+          {Name:'Val',Email:'valet@cherry.com',Valet_ID:'15d6f99',time:'1/12/18',avatar:''},
+          {Name:'Pirat',Email:'pirat@cherry.com',Valet_ID:'16g523',time:'6/13/18',avatar:''},
+          {Name:'Pupkin',Email:'vasya@cherry.com',Valet_ID:'99v8vg',time:'4/12/18',avatar:''},
+          {Name:'Dron',Email:'dron@cherry.com',Valet_ID:'116838',time:'31/2/19',avatar:''},
+          {Name:'Robert Row',Email:'robert@cherry.com',Valet_ID:'159216',time:'31/2/19',avatar:'https://images.pexels.com/photos/3031391/pexels-photo-3031391.jpeg'},
         ]
       }),
       methods:{
@@ -60,6 +64,6 @@
 </script>
 <style>
   thead{
-    background:linear-gradient(rgb(255, 100, 100),rgb(255, 200, 200));
+    background:#6C757D;
   }
 </style>

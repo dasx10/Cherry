@@ -1,6 +1,11 @@
 <template>
   <div class="mt-5">
     <b-form class='container text-center' @submit.prevent="sign" @reset="reset" v-if="show">
+      <div class="wel">
+        <h3 class='my-2'>Welcome</h3>
+        <h6>Sign in please</h6>
+        <hr>
+      </div>
         <b-form-group id="input-group-1" label="Email address:" label-for="email" description="We'll never share your email with anyone else.">
             <b-form-input id="email" v-model="form.email" type="email" required placeholder="Enter email" ></b-form-input>
         </b-form-group>
@@ -44,3 +49,19 @@
     }
   }
 </script>
+<style scoped>
+.container{
+  border:1px solid #ccc;
+  border-radius:10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  padding: 10px;
+  max-width: 700px;
+}
+@media(max-width:576px){
+  .container{
+    border:none;
+    box-shadow:none;
+    padding:0;
+  }
+}
+</style>

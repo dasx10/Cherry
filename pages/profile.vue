@@ -26,9 +26,6 @@
         border:2px solid gray;
         box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
-    .ava:hover{
-        background-size:105%;
-    }
     .prof{
         margin: 0 5vw;
     }

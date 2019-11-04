@@ -1,7 +1,7 @@
 <template>
   <div class='tab'>
+    <b-button v-b-modal.map variant="success" class='my-2'>Add new location</b-button>
     <b-table striped hover :items="items" :fields="fields"></b-table>
-    <b-button v-b-modal.map variant="success">Add</b-button>
     <b-modal size="xl" id='map' centered>
         <b-form-group id="name" label="Location name:" label-for="lng">
             <b-form-input id="lng" v-model="form.name" type="text" required placeholder="Enter name"></b-form-input>
