@@ -27,11 +27,10 @@
 </template>
 <script>
   export default {
-    middleware:['auth','role'],
+    middleware:['auth'],
     computed:{
       transactions(){return this.$store.getters['Trans/transactions']},
       upload(){return this.$store.getters['Trans/upload']},
-      locations(){return this.$store.getters['Locations/locations']},
     },
     data:()=>({
       timestamp:[],
@@ -89,7 +88,6 @@
     },
     async mounted(){
       this.$store.dispatch('Trans/getTrans');
-      this.$store.dispatch('Users/getValets');
     }
   }
 </script>

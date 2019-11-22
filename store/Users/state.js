@@ -2,10 +2,18 @@ export default()=>({
   user:{
     email:'',
     name:'',
-    status:'admin',
-    password:'',
+    id_valet:'',
+    role:'',
     token:'',
-    updated:'',
-    created:''
-  }
+    ava:'',
+    id_airport:'',
+    car_model:'',
+    plate_number:'',
+    avg_rate:'',
+    airport_name:''
+  },
+  valets:[],
+  errMsg:'',
+  upload:false,
+  singlUpload:false,
 })
